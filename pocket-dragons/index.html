@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#05070a" />
+    <title>Keepers' Lair — Pocket Dragons Community</title>
+    <meta name="description" content="Community hub for Pocket Dragons Keepers: live chat, community X posts, leaderboard and guides." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐉</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="bg-glow g1"></div>
+      <div class="bg-glow g2"></div>
+      <div class="bg-glow g3"></div>
+      <div class="bg-grid"></div>
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="brand-mark">🐉</span>
+        <span class="brand-text">Pocket Dragons<small>Keepers' Lair</small></span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#content">Content</a>
+        <a href="#chat">Chat</a>
+        <a href="#hoard">Hoard</a>
+        <a href="#guide">Guide</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div id="authSlot" class="auth-slot"></div>
+    </header>
+
+    <main>
+      <section class="hero wrap" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot"></span> Community hub · The Hatchery is live</p>
+          <h1>Where <span class="grad">Keepers</span><br />gather</h1>
+          <p class="lead">
+            Chat with fellow Keepers, share your Pocket Dragons posts from X and climb the community hoard —
+            all in one lair.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary btn-lg" data-action="join">🥚 Join with email</button>
+            <a class="btn btn-ghost btn-lg" href="https://pocketdragons.io/" target="_blank" rel="noopener">Enter the Hatchery ↗</a>
+          </div>
+          <div class="stats" id="stats">
+            <div class="stat"><b data-stat="members">–</b><span>Keepers</span></div>
+            <div class="stat"><b data-stat="posts">–</b><span>Posts shared</span></div>
+            <div class="stat"><b data-stat="messages">–</b><span>Messages</span></div>
+            <div class="stat stat-live"><b data-stat="online">–</b><span>Online now</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="egg-halo"></div>
+          <canvas id="egg" aria-label="Spinning dragon egg"></canvas>
+          <div class="egg-plinth"></div>
+          <p class="egg-caption">Is your egg still spinning? 👀</p>
+        </div>
+      </section>
+
+      <section class="wrap ama" id="ama">
+        <div class="ama-card">
+          <div class="ama-info">
+            <span class="ama-badge" data-ama="badge">Weekly AMA</span>
+            <h2>Every Friday with the team</h2>
+            <p class="muted" data-ama="when"></p>
+          </div>
+          <div class="ama-timer" data-ama="timer" aria-live="polite"></div>
+          <a class="btn btn-ghost" data-ama="link" href="https://x.com/Pocket_Dragons_" target="_blank" rel="noopener">Follow on 𝕏 ↗</a>
+        </div>
+      </section>
+
+      <section class="wrap hub">
+        <div class="feed-col" id="content">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Community content</p>
+              <h2>From the Keepers on 𝕏</h2>
+              <p class="muted">Art, memes, guides and lore posted by the community. Share yours and give 🔥 to your favourites.</p>
+            </div>
+          </div>
+          <div class="submit-slot" data-slot="submit"></div>
+          <div class="feed-toolbar">
+            <div class="chips" role="tablist" aria-label="Category" data-filter="category"></div>
+            <div class="seg" role="group" aria-label="Sort">
+              <button class="is-on" data-sort="new">New</button>
+              <button data-sort="top">Top 🔥</button>
+            </div>
+          </div>
+          <div class="feed-grid" aria-live="polite"></div>
+          <div class="feed-empty" hidden>
+            <div class="empty-egg">🥚</div>
+            <h3>No posts here yet</h3>
+            <p class="muted">Be the first Keeper to share something from X.</p>
+          </div>
+          <button class="btn btn-ghost btn-block feed-more" hidden>Load more</button>
+        </div>
+
+        <aside class="chat" id="chat" aria-label="Community chat">
+          <div class="chat-head">
+            <div>
+              <h2>Lair chat</h2>
+              <p class="chat-topic muted" data-chat="topic"></p>
+            </div>
+            <div class="chat-online"><span class="live-dot"></span><span data-chat="online">0</span> online</div>
+          </div>
+          <div class="chat-members" data-chat="members"></div>
+          <div class="chat-tabs" role="tablist" aria-label="Channels"></div>
+          <div class="chat-list" data-chat="list"></div>
+          <div class="chat-status" data-chat="status" hidden>Reconnecting…</div>
+          <div class="chat-composer" data-chat="composer"></div>
+        </aside>
+      </section>
+
+      <section class="wrap hoard" id="hoard">
+        <div class="section-head">
+          <div>
+            <p class="kicker">The Hoard</p>
+            <h2>Most active Keepers</h2>
+            <p class="muted">Community score: +10 per shared post, +5 for every 🔥 from others, +1 per 5 chat messages.</p>
+          </div>
+        </div>
+        <div class="hoard-grid">
+          <ol class="board" data-hoard="board"></ol>
+          <div class="keeper-card" data-hoard="me"></div>
+        </div>
+      </section>
+
+      <section class="wrap guide" id="guide">
+        <div class="section-head">
+          <div>
+            <p class="kicker">New Keeper path</p>
+            <h2>How to get started</h2>
+            <p class="muted">A quick community guide. Always double-check announcements from the official channels.</p>
+          </div>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <h3>Become a Keeper</h3>
+            <p>Head to <a href="https://pocketdragons.io/" target="_blank" rel="noopener">pocketdragons.io</a>, connect your X and Discord and claim your Keeper Card.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <h3>Visit the Hatchery</h3>
+            <p>Hatch your egg and keep coming back — things change with the weather.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <h3>Earn badges &amp; Honor</h3>
+            <p>Badges track your journey on the official site. Check your page for new quests.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">4</span>
+            <h3>Create on 𝕏</h3>
+            <p>Post original art, memes, guides or lore tagging <a href="https://x.com/Pocket_Dragons_" target="_blank" rel="noopener">@Pocket_Dragons_</a>, then share it here.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">5</span>
+            <h3>Join the AMA</h3>
+            <p>The team hosts a weekly AMA every Friday. Bring questions, meet the Keepers.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="wrap faq" id="faq">
+        <div class="section-head">
+          <div>
+            <p class="kicker">FAQ</p>
+            <h2>Good to know</h2>
+          </div>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Is this the official Pocket Dragons website?</summary>
+            <p>No, it's a community hub. The official site is <a href="https://pocketdragons.io/" target="_blank" rel="noopener">pocketdragons.io</a> and official news comes from <a href="https://x.com/Pocket_Dragons_" target="_blank" rel="noopener">@Pocket_Dragons_</a> on X.</p>
+          </details>
+          <details>
+            <summary>Why do I sign in with email?</summary>
+            <p>No passwords: every time you sign in we email you a one-time 6-digit code. The first code creates your Keeper account. Your email is never shown to other Keepers.</p>
+          </details>
+          <details>
+            <summary>What can I share in Content?</summary>
+            <p>Links to your own public posts on X about Pocket Dragons: art, memes, guides, lore, videos. Posts are embedded straight from X. Spam and reposted art without credit get removed.</p>
+          </details>
+          <details>
+            <summary>Does the Hoard count towards badges, Honor or whitelist?</summary>
+            <p>No. The Hoard only reflects activity on this site. Badges, Honor and any whitelist rules are managed by the team on the official site.</p>
+          </details>
+          <details>
+            <summary>Will anyone here ask for my wallet or seed phrase?</summary>
+            <p>Never. Don't share your seed phrase, don't sign transactions from links posted in chat and be careful with DMs from "support".</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer wrap">
+      <div class="brand"><span class="brand-mark">🐉</span><span class="brand-text">Keepers' Lair<small>Community-run hub for Pocket Dragons</small></span></div>
+      <div class="footer-links">
+        <a href="https://pocketdragons.io/" target="_blank" rel="noopener">pocketdragons.io ↗</a>
+        <a href="https://x.com/Pocket_Dragons_" target="_blank" rel="noopener">𝕏 @Pocket_Dragons_ ↗</a>
+      </div>
+    </footer>
+
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

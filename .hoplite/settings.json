@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "setup": "cd pocket-dragons && pnpm install --frozen-lockfile",
+    "run": "cd pocket-dragons && PORT=3000 pnpm dev"
+  },
+  "ports": {
+    "preview": 3000
+  }
+}
