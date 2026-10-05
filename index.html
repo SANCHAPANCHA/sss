@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#120a06" />
+    <title>BURGER LAB — Меню</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader-burger">🍔</div>
+      <div class="loader-text">Разогреваем гриль…</div>
+    </div>
+
+    <canvas id="scene"></canvas>
+    <div class="bg-glow"></div>
+
+    <header class="topbar">
+      <div class="brand">BURGER<span>LAB</span></div>
+      <div class="table-badge" id="tableBadge" hidden></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">🔥 Гриль на углях · с 2015</p>
+        <h1>Сочные<br /><span class="grad">бургеры</span><br />без компромиссов</h1>
+        <p class="lead">Мраморная говядина, бриошь собственной выпечки и соусы по секретным рецептам.</p>
+        <a href="#menu" class="cta">Открыть меню <span>↓</span></a>
+      </div>
+      <div class="scroll-hint"><span></span></div>
+    </section>
+
+    <main id="menu">
+      <nav class="tabs" id="tabs"></nav>
+      <div id="sections"></div>
+      <footer class="foot">
+        <p>BURGER LAB · ул. Грилевая, 1 · ежедневно 11:00–23:00</p>
+        <p class="muted">Цены указаны в рублях. Сообщите официанту об аллергиях.</p>
+      </footer>
+    </main>
+
+    <button class="cart-fab" id="cartFab" aria-label="Корзина">
+      <span class="cart-icon">🛒</span>
+      <span class="cart-total" id="cartTotal">0 ₽</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <div class="sheet-backdrop" id="backdrop"></div>
+
+    <aside class="sheet" id="itemSheet" aria-hidden="true">
+      <div class="sheet-handle"></div>
+      <div id="itemSheetBody"></div>
+    </aside>
+
+    <aside class="sheet" id="cartSheet" aria-hidden="true">
+      <div class="sheet-handle"></div>
+      <h2 class="sheet-title">Ваш заказ</h2>
+      <div id="cartList"></div>
+      <div class="cart-summary">
+        <div class="row"><span>Итого</span><strong id="cartSum">0 ₽</strong></div>
+        <button class="btn-primary" id="orderBtn">Оформить заказ</button>
+      </div>
+    </aside>
+
+    <div class="toast" id="toast"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

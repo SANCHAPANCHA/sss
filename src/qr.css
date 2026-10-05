@@ -1,0 +1,24 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Manrope', system-ui, sans-serif; background: #120a06; color: #fff4e6; padding: 24px; }
+h1 { font-family: 'Unbounded', sans-serif; margin-bottom: 8px; }
+.panel { max-width: 640px; margin: 0 auto 30px; display: grid; gap: 14px; }
+.panel p { color: #c9a98a; }
+label { display: grid; gap: 6px; font-weight: 600; }
+input { padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255, 180, 90, .3); background: #22130a; color: inherit; font: inherit; }
+.actions { display: flex; gap: 10px; }
+button { padding: 12px 20px; border: 0; border-radius: 12px; font: inherit; font-weight: 800; cursor: pointer; background: linear-gradient(135deg, #ffc23d, #ff7a1a); color: #2a1000; }
+.grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); max-width: 1100px; margin: 0 auto; }
+.qr-card {
+  background: #fff; color: #1a0d05; border-radius: 20px; padding: 18px; text-align: center;
+  break-inside: avoid; border: 3px solid #ff7a1a;
+}
+.qr-card .brand { font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 18px; }
+.qr-card .brand span { color: #ff7a1a; }
+.qr-card img { width: 100%; max-width: 200px; display: block; margin: 10px auto; }
+.qr-card .tbl { font-weight: 800; font-size: 20px; }
+.qr-card small { color: #7a5a40; }
+@media print {
+  body { background: #fff; padding: 0; }
+  .no-print { display: none; }
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 10mm; }
+}
